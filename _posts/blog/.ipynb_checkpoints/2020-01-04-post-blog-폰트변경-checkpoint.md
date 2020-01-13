@@ -1,0 +1,77 @@
+---
+layout: post
+title: "[Blog] Minimal Mistakes 폰트 변경하기"
+date: 2020-01-04
+categories:
+  - Post
+tags:
+  - Post
+  - Blog
+toc: true
+toc_label: "블로그 폰트 변경하는 방법"
+toc_icon: "list"
+---
+
+![](https://cdn.pixabay.com/photo/2017/05/30/03/58/blog-2355684_1280.jpg)
+
+**지킬 (Jekyll)을 이용한 .github.io 블로그 만들기** 까지는 
+
+구글링을 통해 어렵지 않게 해결하였다.
+
+그러나 기본 테마가 별로라,
+
+[Jekyll Theme](http://jekyllthemes.org/) 사이트에서 구경좀 하다가
+
+원하던 테마가 없어 다시 구글링...
+
+
+구글신께서는 
+
+"니가 원하는 테마는 Minimal Mistakes임"
+
+이라고 알려주셨다.
+
+
+소프트웨어 전공자가 아닌지라 커스터마이징 하는데 애를 먹었지만, 
+
+[Minimal Mistakes의 공식 블로그](https://mmistakes.github.io/minimal-mistakes/docs/stylesheets/) 에 나온데로 하니까 잘 적용된다.
+
+---
+
+# 1. 구글 폰트에서 원하는 폰트 찾기
+
+
+[구글 폰트](https://fonts.google.com/?subset=korean)에서 원하는 폰트 선정
+
+
+![](http://www.newsian.co.kr/news/photo/201809/32584_9074_824.jpg)
+
+`Nanum Serif KR` 폰트로 선택했다.
+
+---
+
+# 2. 아래 2개의 파일 수정
+
+- `includes/head/custom.html` 
+- `_sass/minimal_mistakes/_variables.scss`
+
+위 두 파일에서 `Nanum Serif KR` 가 어떻게 들어갔는지 잘 보면 된다!
+
+## includes/head/custom.html 파일
+
+```html
+<link href="https://fonts.googleapis.com/css?family=Nanum+Serif+KR" rel="stylesheet" type="text/css">
+```
+
+파일에 위 문구 추가
+
+## _sass/minimal_mistakes/_variables.scss 파일
+
+```scss
+/* system typefaces */
+$serif      : Georgia, Times, serif;
+$sans-serif : "Nanum Serif KR", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+$monospace  : Monaco, Consolas, "Lucida Console", monospace;
+```
+
+파일의 위 부분 수정
